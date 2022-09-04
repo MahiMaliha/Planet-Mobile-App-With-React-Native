@@ -1,10 +1,12 @@
 import { View, Text as RNText } from 'react-native'
 import React from 'react'
 
-export default function Text() {
+export default function Text({children}) {
   return (
-    <View>
-      <RNText>TEXT</RNText>
-    </View>
+ 
+      <RNText>
+            {children}
+      </RNText>
+    
   )
 }
