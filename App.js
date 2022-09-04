@@ -13,7 +13,8 @@ export default function App() {
   
     return (
       <View style={styles.container}>
-        <Text style={{fontSize:spacing[6]}}>Welcome to my App</Text>
+        <Text style={styles.first}>Welcome to my App</Text>
+        <Text style={styles.second}>Welcome to my App</Text>
       
         <StatusBar style="auto" />
       </View>
@@ -28,6 +29,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  
+  backgroundColor:'black',
+
+  },
+  second: {
+   fontWeight:'bold',
+   fontSize:spacing[5],
+ 
+  },
+  first: {
+   fontWeight:'bold',
+   fontSize:spacing[7],
+ 
   },
 });

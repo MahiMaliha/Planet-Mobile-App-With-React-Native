@@ -2,7 +2,8 @@ import { colors } from "../../theme/colors";
 
 const BASE = {
     fontSize:16,
-    color:colors.white
+    color:colors.white,
+
 }
 const BASE_BOLD = {
     fontSize:16,
@@ -17,7 +18,8 @@ export const presets = {
    bold:BOLD,
    h1:{
     ...BOLD,
-    fontSize:32
+    fontSize:32,
+  
    },
    h2:{
     ...BOLD,
