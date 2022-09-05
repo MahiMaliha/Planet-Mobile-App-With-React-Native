@@ -3,26 +3,25 @@ import { StyleSheet,  View } from 'react-native';
 import Text from './src/components/text/text';
 import { colors } from './src/theme/colors';
 import { spacing } from './src/theme/spacing';
-import { useFonts } from 'expo-font';
+import { NavigationContainer ,DarkTheme} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import home from './src/screens/home';
+import Home from './src/screens/home';
 
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
  
-  const [fontsLoaded] = useFonts({
-    'opensans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
-    'Roboto-Black': require('./assets/fonts/Roboto-Black.ttf'),
-    'QwitcherGrypen-Regular': require('./assets/fonts/QwitcherGrypen-Regular.ttf'),
-    
-  });
+ 
 
   
     return (
-      <View style={styles.container}>
-        <Text style={{fontFamily:'Roboto-Black'}}>Welcome to my App</Text>
-        <Text style={styles.second}>Welcome to my App</Text>
-      
-        <StatusBar style="auto" />
-      </View>
+      <NavigationContainer theme={DarkTheme}>
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
     );
   
  
@@ -36,6 +35,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   backgroundColor:'black',
 
+  },
+  hello:{
+fontWeight:'bold',
+fontSize:spacing[7]
   },
   second: {
    fontWeight:'bold',
